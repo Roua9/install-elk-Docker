@@ -1,0 +1,15 @@
+metricbeat.modules:
+  - module: system
+    xpack.enabled: true
+    metricsets:
+      - cpu
+      - memory
+      - network
+      - filesystem
+    enabled: true
+    period: 10s
+    process.include_top_n:
+      by_cpu: 5
+      by_memory: 5
+output.elasticsearch:
+  hosts: ["http://es-node-01:9200"]

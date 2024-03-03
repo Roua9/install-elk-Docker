@@ -1,0 +1,7 @@
+filebeat.inputs:
+  - type: log
+    paths:
+      - "/var/log/*.log" # Chemin vers vos fichiers journaux, à adapter
+
+output.logstash:
+  hosts: ["logstash:5400"] # Remplacez par l'adresse et le port corrects de votre service Logstash
